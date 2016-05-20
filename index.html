@@ -1,6 +1,15 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      ( function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+      for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+      mixpanel.init("de5cbda28df6cd7da2d56d44389c754d");
+
+      (function () {
+        mixpanel.track_forms('#web-subscribe', 'Web-Subscribe', {
+        }) })();
+    </script>
     <style>
       @import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 
@@ -1718,7 +1727,7 @@ vertical-right
 
   <body style="background-color: rgb(0,191,195);">
 
-    <form id="myForm" style="box-sizing:border-box; color:rgb(51,51,51); display: block; font-family:Arial, sans-serif; font-size: 14px; font-weight: 100; letter-spacing: 1px; line-height: 16px; text-align: center;">
+    <form id="web-subscribe" style="box-sizing:border-box; color:rgb(51,51,51); display: block; font-family:Arial, sans-serif; font-size: 14px; font-weight: 100; letter-spacing: 1px; line-height: 16px; text-align: center;">
       <input id="mailInput" type="email" name="sub_email" placeholder="Enter your email address" data-name="sub_email" required="required"/>
       <input id="submitInput" type="submit" value="Join our community!"/>
       <div id="subscribing" style="display:none;">
@@ -1744,7 +1753,7 @@ vertical-right
 
     <script>
       $(document).ready(function() {
-        $('#myForm').submit(function(event) {
+        $('#web-subscribe').submit(function(event) {
           event.preventDefault();
           $.ajax({
             type:"POST",
